@@ -1,80 +1,50 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-import { Container, Divider, Dropdown, Grid, Header, Image, List, Menu, Segment } from 'semantic-ui-react'
+import React from 'react'
+import { Grid, Icon, Label, Menu, Input } from 'semantic-ui-react';
+import SideMenu from "./SideMenuCustom"
 
 
+export default class Main extends React.Component {
+ 
+  render(){    
+    return(
+      <Grid className="main-outer">
+        <Grid.Row color="teal" verticalAlign="middle" className="header-row">
+          <Grid.Column width={2} textAlign="right">
+            <div>Logo</div>
+          </Grid.Column>
+          <Grid.Column width={11} textAlign="right">
+            <div></div>
+          </Grid.Column>
+          <Grid.Column width={2}>
+          <Menu compact secondary className="header-icon">
+            <Menu.Item as='a'>
+              <Icon name='mail' className="icon-custom"/> 
+              <Label color='red' floating size="mini" className="label">22</Label>
+            </Menu.Item>
+            <Menu.Item as='a'>
+              <Icon name='alarm' className="icon-custom"/>
+              <Label color='red' floating size="mini" className="label">2</Label>
+            </Menu.Item>
+          </Menu>
+          </Grid.Column>
+          <Grid.Column width={1}>
+            <Icon name='user circle' size="large" className="icon-custom" />
+          </Grid.Column>
+        </Grid.Row>
 
-export default class Home extends Component {
+        <Grid.Row className="container-fixed">
+        {
+          // <Grid.Column width={2} color="teal" className="side-menu-column">
+          //   <SideMenu />
+          // </Grid.Column>
+          // <Grid.Column width={14} >
 
-	render(){
-		const { match } = this.props;
-		return(
-		  <div>
-		    <Menu fixed='top' inverted style={{zIndex: 105}}>
-		        <Menu.Item as='a' header>
-		          {
-		          	// <Image
-      		     //        size='mini'
-      		     //        src='/logo.png'
-      		     //        style={{ marginRight: '1.5em' }}
-      		     //      />
-      		      }
-		          Project Name
-		        </Menu.Item>
-		        <Menu.Item as='a'>Home</Menu.Item>
+          // </Grid.Column>
+        }
+        <SideMenu />
+        </Grid.Row>
+      </Grid>
+    )
+  }
 
-		        <Dropdown item simple text='Dropdown'>
-		          <Dropdown.Menu>
-		            <Dropdown.Item>List Item</Dropdown.Item>
-		            <Dropdown.Item>List Item</Dropdown.Item>
-		            <Dropdown.Divider />
-		            <Dropdown.Header>Header Item</Dropdown.Header>
-		            <Dropdown.Item>
-		              <i className='dropdown icon' />
-		              <span className='text'>Submenu</span>
-		              <Dropdown.Menu>
-		                <Dropdown.Item>List Item</Dropdown.Item>
-		                <Dropdown.Item>List Item</Dropdown.Item>
-		              </Dropdown.Menu>
-		            </Dropdown.Item>
-		            <Dropdown.Item>List Item</Dropdown.Item>
-		          </Dropdown.Menu>
-		        </Dropdown>
-		    </Menu>
-		    <Menu fixed='left' vertical inverted>
-		        <Menu.Item as='a' header>
-		          -
-		        </Menu.Item>
-		        <Menu.Item as='a'>Home</Menu.Item>
-
-		        <Dropdown item simple text='Dropdown'>
-		          <Dropdown.Menu>
-		            <Dropdown.Item>List Item</Dropdown.Item>
-		            <Dropdown.Item>List Item</Dropdown.Item>
-		            <Dropdown.Divider />
-		            <Dropdown.Header>Header Item</Dropdown.Header>
-		            <Dropdown.Item>
-		              <i className='dropdown icon' />
-		              <span className='text'>Submenu</span>
-		              <Dropdown.Menu>
-		                <Dropdown.Item>List Item</Dropdown.Item>
-		                <Dropdown.Item>List Item</Dropdown.Item>
-		              </Dropdown.Menu>
-		            </Dropdown.Item>
-		            <Dropdown.Item>List Item</Dropdown.Item>
-		          </Dropdown.Menu>
-		        </Dropdown>
-		    </Menu>
-
-
-		    <Segment
-		      inverted
-		      vertical
-		      style={{ padding: '2em 0em' }}
-		    >
-		      
-		    </Segment>
-		  </div>
-		)
-	}
 }
